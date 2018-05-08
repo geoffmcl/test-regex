@@ -6,4 +6,11 @@ test-regex2
 cmake_install.cmake
 test-regex
 test-regex3
+*.vcxproj
+*.filters
+Debug/*
+Release/*
+*.dir/*
+x64/*
+*.sln
 
