@@ -21,7 +21,7 @@ Windows: Assume using a MSVC install
 
 #### Licence
 
-Licence GNU GPL v.2.0 - see [LICENCE.txt](LICENCE.txt)
+Licence GNU GPL v.2.0 - see [LICENCE.txt](https://github.com/geoffmcl/test-regex/blob/master/LICENSE.txt)
 
 
 Geoff.  
