@@ -1,0 +1,9 @@
+bldlog-1.txt
+CMakeCache.txt
+CMakeFiles/*
+Makefile
+test-regex2
+cmake_install.cmake
+test-regex
+test-regex3
+
