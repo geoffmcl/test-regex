@@ -8,11 +8,16 @@ Project uses [cmake](https://cmake.org/install/) configuration and generation to
 
 Unix: Assume using (default) `Unix Makefiles` generator
 
+Checkout `build-me.sh`. It may work for you...
+
     $ cd build
     $ cmake .. -DCMAKE_BUILD_TYPE=Release [options]
     $ make
+
     
 Windows: Assume using a MSVC install
+
+Checkout `build-me.bat`. It may work for you, perhaps with adjustment of the boost install location...
 
     $ cd build
     $ cmake .. [options]
