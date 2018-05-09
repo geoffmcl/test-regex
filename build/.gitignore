@@ -14,4 +14,5 @@ Release/*
 x64/*
 *.sln
 *.VC.db
+regex-ex
 
