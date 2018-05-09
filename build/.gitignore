@@ -13,4 +13,5 @@ Release/*
 *.dir/*
 x64/*
 *.sln
+*.VC.db
 
