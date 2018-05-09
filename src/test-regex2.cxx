@@ -1,4 +1,16 @@
-
+/*\
+ * test-regex2.cxx
+ *
+ * Copyright (c) 2018 - Geoff R. McLane
+ * Licence: GNU GPL version 2
+ *
+ * boost regex example
+ * from: https://ubuntuforums.org/archive/index.php/t-1674703.html
+ * got an error "undefined reference to `boost::re_detail::perl_matcher..." and other things...
+ * but in that case seemed it was solved adding '-lboost_regex'
+ * I also do not have a problem compiling this...
+ *
+\*/
 #include <iostream>
 #include <string>
 #include <boost/regex.hpp> // Boost.Regex lib
