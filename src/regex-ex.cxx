@@ -107,17 +107,30 @@ void example_8_7()
 
 void example_8_8()
 {
+    bool setloc = true;
     std::cout << "Example 8.8. Linking a locale to a regular expression" << std::endl;
     std::string s = "Boost k\xfct\xfcphaneleri";
     boost::basic_regex<char, boost::cpp_regex_traits<char>> expr;
 #ifdef WIN32
     expr.imbue(std::locale{ "Turkish" });
 #else
-    expr.imbue(std::locale{ "tr_TR" });
+    try
+    {
+        expr.imbue(std::locale{ "tr_TR" });
+    }
+    catch(std::exception const& e)
+    {
+        std::cout << "Exception: 'tr_TR' " << e.what() << "\n";
+        setloc = false;
+    }    
 #endif
     expr = "\\w+\\s\\w+";
     std::cout << "string: '" << s << "', regexe: '" << expr << "'" << std::endl;
-    std::cout << "Expect: 'true' - " << std::boolalpha << boost::regex_match(s, expr) << '\n';
+    if (setloc) {
+        std::cout << "Expect: 'true' - " << std::boolalpha << boost::regex_match(s, expr) << '\n';
+    } else {
+        std::cout << "'imbue' failed as above! Expect: 'false' - " << std::boolalpha << boost::regex_match(s, expr) << '\n';
+    }
 }
 
 
