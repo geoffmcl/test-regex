@@ -136,6 +136,9 @@ set(${name}_SRCS
     ${dir}/${name}.cxx
     )
 add_executable( ${name} ${${name}_SRCS} )
+if (UNIX)
+    set_property(TARGET ${name} PROPERTY CXX_STANDARD 11)
+endif ()
 if (add_LIBS)
     target_link_libraries( ${name} ${add_LIBS} )
 endif ()
