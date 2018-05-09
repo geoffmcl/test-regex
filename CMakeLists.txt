@@ -15,6 +15,7 @@ set( trv_POINT 0 )
 # Allow developer to select is Dynamic or static library built
 set( LIB_TYPE STATIC )  # set default static
 option( BUILD_SHARED_LIB "Build Shared Library" OFF )
+option( BUILD_JGREP_APP "Set ON to build the jgrep app" OFF )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
     set( WARNING_FLAGS -Wall )
@@ -128,6 +129,21 @@ if (BUILD_JGREP_APP)
     # deal with install, if any...
     #install( TARGETS ${name} DESTINATION bin )
 endif ()
+
+set(name regex-ex)
+set(dir src)
+set(${name}_SRCS
+    ${dir}/${name}.cxx
+    )
+add_executable( ${name} ${${name}_SRCS} )
+if (add_LIBS)
+    target_link_libraries( ${name} ${add_LIBS} )
+endif ()
+if (MSVC)
+    set_target_properties( ${name} PROPERTIES DEBUG_POSTFIX d )
+endif ()
+# deal with install, if any...
+#install( TARGETS ${name} DESTINATION bin )
 
 
 # eof
