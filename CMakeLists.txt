@@ -148,6 +148,27 @@ endif ()
 # deal with install, if any...
 #install( TARGETS ${name} DESTINATION bin )
 
+set(name cpp-markdown)
+set(dir src/md)
+set(${name}_SRCS
+    ${dir}/main.cpp
+    ${dir}/markdown.cpp
+    ${dir}/markdown.h
+    ${dir}/markdown-tokens.cpp
+    ${dir}/markdown-tokens.h
+    )
+add_executable( ${name} ${${name}_SRCS} )
+if (UNIX)
+    set_property(TARGET ${name} PROPERTY CXX_STANDARD 11)
+endif ()
+if (add_LIBS)
+    target_link_libraries( ${name} ${add_LIBS} )
+endif ()
+if (MSVC)
+    set_target_properties( ${name} PROPERTIES DEBUG_POSTFIX d )
+endif ()
+# deal with install, if any...
+#install( TARGETS ${name} DESTINATION bin )
 
 # eof
 
