@@ -2,4 +2,5 @@ test-regex
 test-regex2
 test-regex3
 regex-ex
+cpp-markdown
 
